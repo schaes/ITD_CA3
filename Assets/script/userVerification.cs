@@ -11,6 +11,16 @@ public class userVerification : MonoBehaviour
     TMP_Text result;
     string user;
     string pass;
+
+    public GameObject CA4;
+    public GameObject LoginPanel;
+
+    public void Start()
+    {
+        CA4.SetActive(false);
+        LoginPanel.SetActive(true);
+        result.text = "use user for user,  pass for password.";
+    }
     public void UserVerify()
     {
         user = "user";
@@ -22,6 +32,9 @@ public class userVerification : MonoBehaviour
                 result.text = "Login Successful";
                 result.color = Color.green;
                 Debug.Log("Login Successful");
+
+                CA4.SetActive(true);
+                LoginPanel.SetActive(false);
             }
             else
             {
